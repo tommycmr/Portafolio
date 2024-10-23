@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,26 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Tomás Muñoz Cersósimo</div>
-            <ul>
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#contact">Contacto</a></li>
+            <div class="logo">
+                <img src="/img/logo.jpg" alt="logo">
+            </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                &#9776;
+            </button>
+            <ul class="nav-links">
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -29,51 +37,79 @@
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="sobre-mi">
         <h2>Sobre Mí</h2>
-        <p>Soy un apasionado por la tecnología, especialmente en el área de hardware y software. Con experiencia en desarrollo web, me enfoco en crear soluciones eficientes.</p>
+        <p>Soy un apasionado por la tecnología, especialmente en el área de hardware y software. Con experiencia en
+            desarrollo web, me enfoco en crear soluciones eficientes.</p>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="proyectos">
         <h2>Proyectos</h2>
         <div class="project-grid">
-            <div class="project">
-                <h3>Proyecto 1</h3>
-                <p>Descripción breve del proyecto 1.</p>
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Sistema para la toma de pedidos de una pizzería </p>
+                    <p class="card__description">Este proyecto consiste en el desarrollo de un sistema integral de toma
+                        de pedidos para una pizzería, diseñado para optimizar el proceso de gestión de pedidos y mejorar
+                        la experiencia del cliente. La interfaz de usuario ha sido diseñada con un enfoque en la
+                        usabilidad, permitiendo a los usuarios realizar pedidos de manera rápida y sencilla, ya sea a
+                        través de una aplicación web o en dispositivos móviles.
+                    </p>
+                    <a href="https://github.com/tommycmr/Pizzeria.git"><button class="card__button secondary">Código
+                            Fuente</button></a>
+                </div>
             </div>
-            <div class="project">
-                <h3>Proyecto 2</h3>
-                <p>Descripción breve del proyecto 2.</p>
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Control Epidemiológico del Dengue</p>
+                    <p class="card__description">Este proyecto tiene como objetivo desarrollar un sistema informativo
+                        que permite agregar y gestionar registros de personas diagnosticadas con dengue y sus tipos. La
+                        página ofrece información relevante sobre la enfermedad y, al acceder a otras secciones, los
+                        usuarios pueden consultar un registro epidemiológico detallado. Este sistema busca facilitar el
+                        seguimiento y análisis de casos de dengue para mejorar la salud pública.</p>
+                    <a href="https://github.com/GabyAvila1993/Dengue.git"><button class="card__button secondary">Código
+                            Fuente</button></a>
+                </div>
             </div>
-            <div class="project">
-                <h3>Proyecto 3</h3>
-                <p>Descripción breve del proyecto 3.</p>
+            <div class="card">
+                <div class="card__content">
+                    <p class="card__title">Portal de Estadísticas Deportivas</p>
+                    <p class="card__description">Este proyecto consiste en el desarrollo de un portal deportivo dedicado
+                        a la Copa América, diseñado para proporcionar a los aficionados del fútbol un acceso completo a
+                        la información relevante sobre este prestigioso torneo. La plataforma ofrece una experiencia
+                        interactiva y educativa, permitiendo a los usuarios explorar todos los aspectos de la
+                        competencia, desde los partidos históricos hasta las estadísticas de los jugadores.</p>
+                    <a href="https://github.com/GabyAvila1993/Trabajo_practico4.git"><button
+                            class="card__button secondary">Código Fuente</button></a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="habilidades">
         <h2>Habilidades</h2>
         <ul>
-            <li>HTML5/CSS3</li>
+            <li>HTML5/CSS</li>
             <li>Python</li>
             <li>MySQL</li>
             <li>Flask</li>
-            <li>Hardware</li>
         </ul>
     </section>
 
+
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contacto">
         <h2>Contacto</h2>
-        <p>Puedes contactarme en <a href="mailto:tomas@example.com">tomas@example.com</a></p>
+        <p>Puedes contactarme en <a href="mailto:tomascmr24@gmail.com">tomascmr24@gmail.com</a></p>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Tomás Muñoz Cersósimo. Todos los derechos reservados.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>

@@ -4,12 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    padding-top: 70px; /* Espacio para la barra de navegación fija */
+    padding-top: 0px;
 }
 
 /* Navegación */
@@ -22,26 +23,46 @@ header {
     left: 0;
     z-index: 1000;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
 }
-nav ul {
+
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
     list-style: none;
-    display: flex;
+    display: flex; /* Mostrar horizontalmente en pantallas grandes */
 }
-nav ul li {
+
+.nav-links li {
     margin-left: 20px;
 }
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
+
 nav ul li a:hover {
     color: #00aaff;
+}
+
+.logo img {
+    width: 100px;
+    height: 45px; 
+    object-fit: contain; 
 }
 
 /* Hero Section */
@@ -55,61 +76,192 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
 }
+
 .hero h1 {
     font-size: 3rem;
 }
+
 .hero p {
     font-size: 1.5rem;
 }
 
-/* About Section */
-#about, #projects, #skills, #contact {
-    padding: 3rem 0;
+/* Secciones Comunes */
+#sobre-mi,
+#proyectos,
+#habilidades,
+#contacto {
+    padding: 50px 20px;
     text-align: center;
-}
-#about h2, #projects h2, #skills h2, #contact h2 {
-    margin-bottom: 1.5rem;
+    background-color: #fff;
+    margin-bottom: 20px;
 }
 
-/* Projects */
+#sobre-mi h2,
+#proyectos h2,
+#habilidades h2,
+#contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #00aaff;
+}
+
+#sobre-mi p,
+#proyectos p,
+#habilidades ul {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Proyectos */
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 20px;
-}
-.project {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-.project h3 {
-    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
 }
 
-/* Skills */
-ul {
+.card {
+    position: relative;
+    width: 400px; /* Aumenta el ancho si es necesario */
+    height: auto; /* Permitir que la tarjeta crezca en altura */
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Cambia la dirección a columna para mejor presentación */
+    align-items: flex-start; /* Alinea el contenido al inicio */
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+    overflow: auto; /* Permitir que el contenido no se desborde */
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+    position: relative; /* Cambiar de absolute a relative */
+    width: 100%;
+    height: auto; /* Permitir que el contenido ajuste su altura */
+    padding: 20px; /* Ajusta el padding si es necesario */
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+}
+
+.card__title {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card__description {
+    margin: 10px 0;
+    font-size: 14px; /* Ajustar según sea necesario */
+    color: #777;
+    line-height: 1.4;
+}
+
+.card__button {
+    padding: 15px;
+    border-radius: 8px;
+    background: #777;
+    border: none;
+    color: white;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.card__button.secondary {
+    background: transparent;
+    color: #777;
+    border: 1px solid #777;
+}
+
+.card__button.secondary:hover {
+    background: #00aaff;
+    color: white;
+    border-color: #00aaff;
+}
+
+/* Habilidades Section */
+#habilidades ul {
     list-style: none;
     padding: 0;
-}
-ul li {
-    margin: 0.5rem 0;
-    font-weight: bold;
+    display: inline-block; /* Cambiar a block para que cada habilidad ocupe toda la línea */
 }
 
-/* Contact */
-#contact p a {
+#habilidades li {
+    font-size: 1.5rem;
+    background: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 0; /* Agregar margen vertical entre las habilidades */
+}
+
+/* Contacto Section */
+#contacto a {
     color: #00aaff;
     text-decoration: none;
+    font-weight: 600;
 }
-#contact p a:hover {
-    text-decoration: underline;
+
+#contacto a:hover {
+    color: #333;
 }
 
 /* Footer */
 footer {
     background: #333;
-    color: #fff;
+    color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .project-grid {
+        flex-direction: column; /* Cambia la dirección a columna para móviles */
+        align-items: center; /* Centra las tarjetas en pantallas pequeñas */
+    }
+
+    .card {
+        width: 90%; /* Aumenta el ancho para que se ajuste mejor en pantallas pequeñas */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostrar el botón en pantallas pequeñas */
+    }
+
+    .nav-links {
+        display: none; /* Ocultar el menú por defecto */
+        flex-direction: column; /* Cambiar a columna */
+        position: absolute;
+        top: 60px; /* Ajustar según la altura del header */
+        right: 0;
+        background: #333;
+        width: 100%; /* Asegúrate de que ocupe el ancho completo */
+        z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Margen vertical en elementos de lista */
+        text-align: center; /* Centrar texto en el menú desplegable */
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostrar el menú cuando está activo */
+    }
 }
